@@ -23,7 +23,7 @@ public class Swagger2 {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.swagger.saytime.web"))
+				.apis(RequestHandlerSelectors.basePackage("com.ssq.swagger.web"))
 				.paths(PathSelectors.any())
 				.build();
 	}
