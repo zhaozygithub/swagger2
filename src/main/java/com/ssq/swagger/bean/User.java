@@ -1,10 +1,10 @@
-package com.swagger.saytime.bean;
+package com.ssq.swagger.bean;
 
 import java.util.Date;
 
 /**
  * @author shaosq
- * @ClassName com.swagger.saytime.bean.User
+ * @ClassName com.ssq.swagger.bean.User
  * @Description
  */
 public class User {

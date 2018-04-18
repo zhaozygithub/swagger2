@@ -1,4 +1,4 @@
-package com.swagger.saytime;
+package com.ssq.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  * @author shaosq
- * @ClassName com.swagger.saytime.Swgger2
+ * @ClassName com.ssq.swagger.Swgger2
  * @Description
  * @date 2018-04-18 12:12:31
  */

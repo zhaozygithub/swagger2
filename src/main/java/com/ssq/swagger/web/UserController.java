@@ -1,4 +1,4 @@
-package com.swagger.saytime.web;
+package com.ssq.swagger.web;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.swagger.saytime.bean.JsonResult;
-import com.swagger.saytime.bean.User;
+import com.ssq.swagger.bean.JsonResult;
+import com.ssq.swagger.bean.User;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -23,7 +23,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author shaosq
- * @ClassName com.swagger.saytime.web.UserController
+ * @ClassName com.ssq.swagger.web.UserController
  * @Description
  */
 @RestController

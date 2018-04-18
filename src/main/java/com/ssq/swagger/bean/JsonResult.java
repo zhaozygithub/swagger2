@@ -1,4 +1,4 @@
-package com.swagger.saytime.bean;
+package com.ssq.swagger.bean;
 
 public class JsonResult {
 
