@@ -23,6 +23,7 @@ public class Swagger2 {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
+				//设置controller的包路径
 				.apis(RequestHandlerSelectors.basePackage("com.ssq.swagger.web"))
 				.paths(PathSelectors.any())
 				.build();
@@ -31,8 +32,8 @@ public class Swagger2 {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				.title("springboot利用swagger构建api文档")
-				.description("简单优雅的restfun风格，http://blog.csdn.net/saytime")
-				.termsOfServiceUrl("http://blog.csdn.net/saytime")
+				.description("简单优雅的restfun风格，http://blog.didispace.com/springbootswagger2/")
+				.termsOfServiceUrl("http://blog.didispace.com/springbootswagger2/")
 				.version("1.0")
 				.build();
 	}

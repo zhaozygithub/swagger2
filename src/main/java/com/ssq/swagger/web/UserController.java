@@ -1,25 +1,15 @@
 package com.ssq.swagger.web;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.ssq.swagger.bean.JsonResult;
 import com.ssq.swagger.bean.User;
-
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
+
+import java.util.*;
 
 /**
  * @author shaosq
@@ -32,6 +22,13 @@ public class UserController {
 	// 创建线程安全的Map
 	static Map<Integer, User> users = Collections.synchronizedMap(new HashMap<Integer, User>());
 
+	static {
+		users.put(1,new User(1,"tom",12,new Date()));
+		users.put(2,new User(2,"jom",102,new Date()));
+		users.put(3,new User(3,"pom",120,new Date()));
+
+	}
+
 	/**
 	 * 根据ID查询用户
 	 * @param id
@@ -39,7 +36,7 @@ public class UserController {
 	 */
 	@ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
 	@ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
-	@RequestMapping(value = "user/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "getuser/{id}", method = RequestMethod.GET)
 	public ResponseEntity<JsonResult> getUserById (@PathVariable(value = "id") Integer id){
 		JsonResult r = new JsonResult();
 		try {
@@ -59,7 +56,7 @@ public class UserController {
 	 * @return
 	 */
 	@ApiOperation(value="获取用户列表", notes="获取用户列表")
-	@RequestMapping(value = "users", method = RequestMethod.GET)
+	@RequestMapping(value = "showUsers", method = RequestMethod.GET)
 	public ResponseEntity<JsonResult> getUserList (){
 		JsonResult r = new JsonResult();
 		try {
@@ -81,7 +78,7 @@ public class UserController {
 	 */
 	@ApiOperation(value="创建用户", notes="根据User对象创建用户")
 	@ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
-	@RequestMapping(value = "user", method = RequestMethod.POST)
+	@RequestMapping(value = "userAdd", method = RequestMethod.POST)
 	public ResponseEntity<JsonResult> add (@RequestBody User user){
 		JsonResult r = new JsonResult();
 		try {
@@ -104,7 +101,7 @@ public class UserController {
 	 */
 	@ApiOperation(value="删除用户", notes="根据url的id来指定删除用户")
 	@ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "path")
-	@RequestMapping(value = "user/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "userDel/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<JsonResult> delete (@PathVariable(value = "id") Integer id){
 		JsonResult r = new JsonResult();
 		try {
